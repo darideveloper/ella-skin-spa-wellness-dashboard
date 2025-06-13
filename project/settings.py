@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'jazzmin',
     'corsheaders',
     'rest_framework',
+    'rest_framework.authtoken',
     
     # Django apps
     'django.contrib.admin',
@@ -353,7 +354,8 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'core.pagination.CustomPageNumberPagination',
     'PAGE_SIZE': 12,
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
     ),
     'EXCEPTION_HANDLER': 'utils.handlers.custom_exception_handler'
 }
