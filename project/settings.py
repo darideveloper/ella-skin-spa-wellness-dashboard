@@ -171,7 +171,7 @@ JAZZMIN_SETTINGS = {
     "copyright": "Powered by Dari Developer",
 
     # Media
-    "site_logo": "core/imgs/logo.webp",
+    "site_logo": "core/imgs/logo-white.webp",
     "login_logo": "core/imgs/logo.webp",
     "login_logo_dark": "core/imgs/logo.webp",
     "site_logo_classes": "",

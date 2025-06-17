@@ -48,9 +48,6 @@ a:hover {
 [class*=sidebar-dark-] .brand-image {
   box-shadow: none !important;
 }
-[class*=sidebar-dark-] .brand-text {
-  color: #321f02 !important;
-}
 
 .btn-success {
   background-color: #b79651;
