@@ -1,5 +1,5 @@
 from rest_framework import status
-from core.test_base.test_views import TestPostsViewsBase
+from core.tests_base.test_views import TestPostsViewsBase
 
 
 class PostViewSetTestCase(TestPostsViewsBase):

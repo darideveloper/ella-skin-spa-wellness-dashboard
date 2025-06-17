@@ -6,8 +6,16 @@ from django.views.generic import RedirectView
 from django.urls import include
 from rest_framework import routers
 
+from blog import views as blog_views
 
 router = routers.DefaultRouter()
+
+# Blog endpoints
+router.register(
+    r'posts',
+    blog_views.PostViewSet,
+    basename='posts'
+)
 
 
 urlpatterns = [
