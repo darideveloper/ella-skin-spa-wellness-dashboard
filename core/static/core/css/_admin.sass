@@ -1,0 +1,198 @@
+@import "./_base.sass"
+
+// Login page
+// Overwrite the default jazzmin app login page styles
+.login-logo
+    img
+        width: 200px
+
+    .card-body
+        background: $color-gold
+        color: $color-white
+
+// Custom header
+.dropdown-item:active, a.dropdown-item.active
+    background: $color-gold !important
+    color: $color-white !important
+
+// Dahsboard
+// Overwrite the default jazzmin app dashboard styles
+.content-wrapper
+    background-color: $color-white
+
+a
+    color: $color-gold !important
+    font-weight: bold
+    duration: 0.2s
+    transition: color 0.2s ease-in-out !important
+
+    &:hover
+        color: $color-black !important
+
+[class*=sidebar-dark-]
+    background-color: $color-gold
+
+    a
+        color: $color-white !important
+
+        &:hover
+            color: $color-black !important
+
+    .brand-link, .user-panel
+        border-color: rgba($color-black, 0.2) !important
+
+    .brand-image
+        box-shadow: none !important
+
+    .brand-text
+        color: $color-black !important
+
+.btn-success
+    background-color: $color-yellow
+    border-color: $color-yellow
+    color: $color-black !important
+    font-weight: bold
+
+    &:hover, &:focus, &:active
+        background-color: $color-black !important
+        border-color: $color-black !important
+        color: $color-white !important
+
+.btn-info, .btn-secondary
+    background-color: $color-gold-light
+    border-color: $color-gold-light
+    color: $color-black !important
+    font-weight: bold
+
+    &:hover, &:focus, &:active
+        background-color: $color-black !important
+        border-color: $color-black !important
+        color: $color-white !important
+
+.btn-primary, .btn-danger
+    background-color: $color-gold
+    border-color: $color-gold
+    color: $color-white !important
+    font-weight: bold
+
+    &:hover, &:focus, &:active
+        background-color: $color-yellow !important
+        border-color: $color-yellow !important
+        color: $color-black !important
+
+.select2-results__option--highlighted
+    background-color: rgba($color-gold, 0.5) !important
+    color: $color-black !important
+
+.nav-link.active
+    background-color: $color-yellow !important
+    color: $color-black !important
+    transition-duration: 0.2s
+
+    &:hover
+        color: rgba($color-black, 0.5) !important
+
+.collapsible-header:hover
+    background-color: rgba($color-gold, 0.8) !important
+
+input[type=checkbox], input[type=radio]
+    accent-color: $color-gold
+
+.selector-chosen h2
+    background-color: $color-gold
+
+.calendar td.selected a
+    background-color: $color-gold
+
+.calendar caption, .clockbox h2
+    background-color: $color-gold
+    color: $color-white
+
+.clockbox a:hover
+    background-color: $color-gold
+    color: $color-white !important
+
+// Fix dashboard responsive
+@media screen and (max-width: 768px)
+
+    .container-fluid > .row > div:nth-child(1)
+        flex-direction: column !important
+
+        h1
+            margin-right: 0 !important
+            padding-right: 0 !important
+
+        ol
+            margin-left: 0 !important
+            padding-left: 0 !important
+
+    .container-fluid > .row > div:nth-child(2)
+        justify-content: center !important
+
+    .breadcrumb
+        display: flex !important
+        justify-content: center !important
+        flex-wrap: wrap !important
+
+@media screen and (max-width: 500px)
+
+    // Main content
+    .content, .tab-content .card-body
+        padding: 1rem 0 !important
+
+    // Filters
+    #changelist-search > .form-group
+        width: 100% !important
+
+    // Add button
+    .container-fluid > .row > div:nth-child(2)
+        justify-content: center !important
+
+    // Actions components
+    .actions 
+        button
+            margin-left: 0 !important
+
+        .select2, > label:nth-child(1)
+            width: 100% !important
+
+        > span
+            margin-left: 0 !important
+            display: block !important
+        
+    // Specific inputs
+    input[type="number"]
+        width: 80px !important
+
+// Fix jazzmin sibar overflow 
+.sidebar
+    overflow: hidden !important
+
+
+// Margin in results number
+.small.quiet
+    margin: 0 10px !important
+
+// margin in list view save button
+[role="status"] input[type="submit"]
+    margin: 0 10px !important
+
+// Custom footer
+@media screen and (max-width: 600px)
+    footer.main-footer
+        text-align: center !important
+
+// Bigger groups and permissions
+.form-group.field-groups, .form-group.field-user_permissions
+    > .row
+        flex-direction: column
+
+        > div
+            max-width: 100% !important
+
+.select2-selection__choice
+    background-color: $color-gold !important
+    color: $color-white !important
+
+    > span
+        margin-left: 10px !important

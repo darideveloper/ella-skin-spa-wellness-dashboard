@@ -174,7 +174,7 @@ JAZZMIN_SETTINGS = {
     "site_logo": "core/imgs/logo.webp",
     "login_logo": "core/imgs/logo.webp",
     "login_logo_dark": "core/imgs/logo.webp",
-    "site_logo_classes": "img-circle",
+    "site_logo_classes": "",
     "site_icon": "core/imgs/favicon.ico",
     
     # Search model in header
