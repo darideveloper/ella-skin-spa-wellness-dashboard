@@ -14,7 +14,7 @@ class TestPostsModelBase(TestCase):
         lang: str = "es",
         description: str = "Test description",
         keywords: str = "test, keywords",
-        author: str = "Itimna Team",
+        author: str = "Ella Skin & Spa Wellness Team",
         content: str = "#Test \n**conten**t",
     ) -> blog_models.Post:
         """Create a post object"""
