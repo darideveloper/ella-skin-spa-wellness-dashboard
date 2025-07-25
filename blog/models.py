@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.text import slugify
 
 
 class Post(models.Model):
@@ -9,6 +10,9 @@ class Post(models.Model):
 
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=255, verbose_name="Título")
+    slug = models.SlugField(
+        max_length=255, verbose_name="Slug", unique=True, blank=True, null=True
+    )
     lang = models.CharField(
         max_length=2, choices=LANGS, default="es", verbose_name="Idioma"
     )
@@ -45,6 +49,13 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+    def save(self, *args, **kwargs):
+
+        # Override slug if not set
+        if not self.slug:
+            self.slug = slugify(self.title)
+        super().save(*args, **kwargs)
+
 
 class Image(models.Model):
     id = models.AutoField(primary_key=True)
@@ -53,10 +64,10 @@ class Image(models.Model):
     created_at = models.DateTimeField(
         auto_now_add=True, verbose_name="Fecha de creación"
     )
-    
+
     class Meta:
         verbose_name_plural = "Imágenes"
         verbose_name = "Imagen"
-        
+
     def __str__(self):
         return self.name

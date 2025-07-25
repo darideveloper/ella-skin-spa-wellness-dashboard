@@ -88,7 +88,7 @@ class PostViewSetTestCase(TestPostsViewsBase):
 
         # Make request
         response = self.client.get(
-            f"{self.endpoint}{self.post_1.id}/",
+            f"{self.endpoint}{self.post_1.slug}/",
             {"details": True}
         )
 

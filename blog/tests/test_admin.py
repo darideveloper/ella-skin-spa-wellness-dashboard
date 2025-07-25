@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 
 from core.tests_base.test_admin import TestAdminSeleniumBase, TestAdminBase
 from core.tests_base.test_models import TestPostsModelBase
+from blog import models as blog_models
 
 
 class PostAdminTestCase(TestAdminBase):
@@ -113,7 +114,10 @@ class ImageAdminTestCaseSelenium(TestAdminSeleniumBase, TestPostsModelBase):
 
     def test_copy_buttons_loaded(self):
         """validate copy buttons (2 of them) visible in page"""
-
+        
+        # Delete old posts
+        blog_models.Post.objects.all().delete()
+        
         self.create_image(None, "test2.webp")
 
         # Submit endpoint
