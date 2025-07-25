@@ -10,6 +10,7 @@ class PostListItemSerializer(serializers.ModelSerializer):
         fields = (
             "id",
             "title",
+            "slug",
             "lang",
             "banner_image_url",
             "description",
