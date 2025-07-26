@@ -102,6 +102,56 @@ class PostViewSetTestCase(TestPostsViewsBase):
         self.assertEqual(json_data["author"], self.post_1.author)
         self.assertEqual(json_data["content"], self.post_1.content)
 
+    def test_get_details_related_post(self):
+        """validate related post in post details"""
+
+        # Create second post
+        post_2 = self.create_post(
+            title="Test Post 2",
+            lang="es",
+            description="Test Description 2",
+            content="Test Content 2",
+        )
+
+        # Relate first post to second post
+        self.post_1.related_post = post_2
+        self.post_1.save()
+
+        # Make request
+        response = self.client.get(
+            f"{self.endpoint}{self.post_1.id}/",
+            {"details": True},
+        )
+
+        # Check response
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+        # Validate response extra content
+        json_data = response.json()
+
+        # Check related post
+        self.assertEqual(json_data["related_post"]["id"], post_2.id)
+        self.assertEqual(json_data["related_post"]["title"], post_2.title)
+
+    def test_get_details_no_related_post(self):
+        """validate no related post in post details"""
+
+        # Make request
+        response = self.client.get(
+            f"{self.endpoint}{self.post_1.id}/",
+            {"details": True},
+        )
+
+        # Check response
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+        # Validate response extra content
+        json_data = response.json()
+
+        # Check related post
+        self.assertIsNone(json_data["related_post"]["id"])
+        self.assertIsNone(json_data["related_post"]["title"])
+
     def test_get_langs(self):
         """Tess get posts in each language"""
 

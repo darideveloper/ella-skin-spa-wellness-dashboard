@@ -34,6 +34,13 @@ class Post(models.Model):
     author = models.CharField(
         max_length=255, verbose_name="Autor", default="Ella Skin & Spa Wellness Team"
     )
+    related_post = models.ForeignKey(
+        "self",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        verbose_name="Entrada relacionada",
+    )
     content = models.TextField(verbose_name="Contenido")
     created_at = models.DateTimeField(
         auto_now_add=True, verbose_name="Fecha de creación"
