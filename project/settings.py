@@ -32,8 +32,8 @@ print(f"HOST: {HOST}")
 INSTALLED_APPS = [
     # Local apps
     "core",
-    # "translations",
     "blog",
+    "leads",
     # Installed apps
     "jazzmin",
     "corsheaders",
