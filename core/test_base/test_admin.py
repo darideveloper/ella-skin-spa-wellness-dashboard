@@ -60,6 +60,7 @@ class TestAdminBase(TestCase):
         
         # Get response
         response = self.client.get(f"{endpoint}", {"q": search_text})
+        print(f"Testing search bar in {endpoint} with text '{search_text}'")
         
         # Check if the response is valid
         self.assertEqual(response.status_code, 200)
@@ -75,7 +76,7 @@ class TestAdminSeleniumBase(TestAdminBase, LiveServerTestCase):
         """ Load data, setup and login in each test """
         
         # Load data
-        call_command("apps_loaddata")
+        # call_command("apps_loaddata")
         
         # Create admin user
         self.admin_user, self.admin_pass, self.admin = self.create_admin_user()

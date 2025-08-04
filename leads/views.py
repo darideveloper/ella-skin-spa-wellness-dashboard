@@ -5,7 +5,7 @@ from leads import models
 from leads import serializers
 
 
-class LeadView(viewsets.ModelViewSet):
+class LeadViewSet(viewsets.ModelViewSet):
     # JTW authentication is required
     queryset = models.Lead.objects.all()
     serializer_class = serializers.LeadSerializer

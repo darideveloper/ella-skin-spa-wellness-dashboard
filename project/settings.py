@@ -7,7 +7,6 @@ from dotenv import load_dotenv
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Setup .env file
 load_dotenv()
 ENV = os.getenv("ENV")
@@ -22,6 +21,8 @@ STORAGE_AWS = os.environ.get("STORAGE_AWS") == "True"
 HOST = os.getenv("HOST")
 TEST_HEADLESS = os.getenv("TEST_HEADLESS", "False") == "True"
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS").split(",")
+EMAILS_LEADS_NOTIFICATIONS = os.getenv("EMAILS_LEADS_NOTIFICATIONS").split(",")
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
 
 print(f"DEBUG: {DEBUG}")
 print(f"STORAGE_AWS: {STORAGE_AWS}")

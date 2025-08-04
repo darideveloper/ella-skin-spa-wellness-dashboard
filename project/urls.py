@@ -7,6 +7,7 @@ from django.urls import include
 from rest_framework import routers
 
 from blog import views as blog_views
+from leads import views as leads_views
 
 router = routers.DefaultRouter()
 
@@ -17,6 +18,12 @@ router.register(
     basename='posts'
 )
 
+# Leads endpoints
+router.register(
+    r'leads',
+    leads_views.LeadViewSet,
+    basename='leads'
+)
 
 urlpatterns = [
     # Admin site

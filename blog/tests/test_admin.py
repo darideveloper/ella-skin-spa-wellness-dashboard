@@ -2,8 +2,8 @@ from time import sleep
 
 from selenium.webdriver.common.by import By
 
-from core.tests_base.test_admin import TestAdminSeleniumBase, TestAdminBase
-from core.tests_base.test_models import TestPostsModelBase
+from core.test_base.test_admin import TestAdminSeleniumBase, TestAdminBase
+from core.test_base.test_models import TestPostsModelBase
 from blog import models as blog_models
 
 
